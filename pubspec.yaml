@@ -1,0 +1,8 @@
+name: GDG2014Demo
+description: A sample Polymer application
+dependencies:
+  paper_elements: any
+  polymer: any
+transformers:
+- polymer:
+    entry_points: web/index.html

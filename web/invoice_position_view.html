@@ -1,0 +1,16 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_fab.html">
+<link href="packages/paper_elements/roboto.html" rel="import">
+<link href="packages/core_elements/core_icons.html" rel="import">
+<link href="packages/paper_elements/paper_fab.html" rel="import">
+
+
+<polymer-element name="invoice-position-view"> <template>
+
+<input type="text" style="float: left;" value="{{position.description}}">
+<input type="number" style="float: left;"
+  value="{{position.price | asInteger}}"> </template> 
+  <script type="application/dart" src="invoice_position_view.dart"></script>
+</polymer-element>
+

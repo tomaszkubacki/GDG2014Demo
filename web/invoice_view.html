@@ -1,0 +1,42 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_fab.html">
+<link href="packages/paper_elements/roboto.html" rel="import">
+<link href="packages/core_elements/core_icons.html" rel="import">
+<link href="packages/paper_elements/paper_fab.html" rel="import">
+<link href="packages/paper_elements/paper_input.html" rel="import">
+<link href="invoice_position_view.html" rel="import">
+
+<polymer-element name="invoice-view"> <template>
+
+<paper-input label="Invoice number" value="{{invoice.number}}"></paper-input>
+
+<paper-shadow z="1">{{invoice.total}}</paper-shadow>
+<br>
+<paper-fab mini="" icon="add" class="green" role="button" tabindex="0"
+  aria-label="done" style="overflow: visible;"
+  on-click="{{addPosition}}"></paper-fab>
+
+<div>
+  <table>
+    <tr>
+      <td>Lp.
+      <td>
+      <td></td>
+    </tr>
+
+    <tr template repeat="{{position in invoice.positions | enumerate}}">
+
+      <td>{{position.index + 1 }}</td>
+      <td><invoice-position-view
+          on-position-price-changed="{{positionChangedHandler}}"
+          position="{{position.value}}"></invoice-position-view></td>
+
+
+    </tr>
+  </table>
+</div>
+
+
+</template> <script type="application/dart" src="invoice_view.dart"></script> </polymer-element>
+
