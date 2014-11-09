@@ -9,15 +9,19 @@
 
 <polymer-element name="invoice-view"> <template>
 
+<div class="card" style="padding:10px;">
+<paper-shadow z="1">
 <paper-input label="Invoice number" value="{{invoice.number}}"></paper-input>
+total: {{invoice.total}}</paper-shadow>
+</div>
 
-<paper-shadow z="1">{{invoice.total}}</paper-shadow>
-<br>
+<div class="card" style="padding:10px;">
+<paper-shadow z="1">
+
 <paper-fab mini="" icon="add" class="green" role="button" tabindex="0"
-  aria-label="done" style="overflow: visible;"
+  aria-label="add" style="overflow: visible;"
   on-click="{{addPosition}}"></paper-fab>
 
-<div>
   <table>
     <tr>
       <td>Lp.
@@ -35,8 +39,8 @@
 
     </tr>
   </table>
+  </paper-shadow>
 </div>
-
 
 </template> <script type="application/dart" src="invoice_view.dart"></script> </polymer-element>
 
